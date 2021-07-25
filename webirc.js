@@ -1,37 +1,41 @@
 /* 
- * ShowChat www.showchat.tk by BaiatRau (qwebirc)
- */
+ * KiwiChat https://kiwichat.github.io
+*/
 
 'use strict';
 
 function build_embed_src() {
     // Variables
-    const base_url = 'https://irc.romaniachat.eu';
-	const port = '9090';
-	const nick = 'RomaniaChat..';
-	const channels = 'Romania,RadioClick';
-	const conect = '1';  /* 1 sau 0 */
-	const tema = 'd4'; /* d4 - MTE9MzY5cf */
+    const base_url = 'https://kiwiirc.com/nextclient/';
+	const plugins = 'conference';
+	const theme = 'osprey';
+    const server_url = 'irc.romaniachat.eu';
+	const server_port = '6667';
+	const chan = '#Romania,#RadioClick';
+    const nick = 'KiwiChat??';
 	
-
     // Get page URL information
     let url = new URL(window.location);
+
     // Construct the iframe src URL
     let src = base_url;
-	if (port) {
-        src += ':' + port;
+	if (plugins) {
+        src += '?plugins=' + plugins;
+    }
+	if (theme) {
+        src += '&theme=' + theme;
+    } 
+	if (server_url) {
+        src += '#irc://' + server_url;
+    }
+	if (server_port) {
+        src += ':' + server_port;
+    } 
+	 if (chan) {
+        src += '/' + chan;
     }
 	if (nick) {
-        src += '/?nick=' + nick;
-    }
-	 if (channels) {
-        src += '&channels=' + channels;
-    }
-	if (conect) {
-        src += '&prompt=' + conect;
-    }
-	if (tema) {
-        src += '&uio=' + tema;
+        src += '?&nick=' + nick;
     }
     return src;
 }
