@@ -1,5 +1,6 @@
 # chat
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab708f47-1e00-4571-a489-cabc9c85afb4/deploy-status)](https://app.netlify.com/sites/kiwiirc-kiwichat/deploys)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e134107d-d12d-417a-bb94-cf97ede186b2/deploy-status)](https://app.netlify.com/sites/romaniachat/deploys)
+Live demo: https://kiwiirc-kiwichat.netlify.app
 
-Live demo: https://romaniachat.netlify.app/
+
