@@ -1,42 +1,34 @@
-/* 
- * KiwiChat https://kiwichat.github.io
-*/
+/* KiwiIRC
+ * https://showchat.eu.org
+ * kiwiirc romaniachat
+ */
 
 'use strict';
 
 function build_embed_src() {
     // Variables
-    const base_url = 'https://kiwiirc.com/nextclient/';
-	const plugins = 'conference';
+        const base_url = 'https://kiwi.romaniachat.eu';
+	const port = '8443';
+	const nick = 'ShowChat??';
 	const theme = 'osprey';
-    const server_url = 'irc.romaniachat.eu';
-	const server_port = '6667';
-	const chan = '#Romania,#RadioClick';
-    const nick = 'KiwiChat??';
-	
+	const chan = 'Romania,#RadioClick,#ShowChat';
     // Get page URL information
     let url = new URL(window.location);
-
     // Construct the iframe src URL
     let src = base_url;
-	if (plugins) {
-        src += '?plugins=' + plugins;
-    }
-	if (theme) {
-        src += '&theme=' + theme;
-    } 
-	if (server_url) {
-        src += '#irc://' + server_url;
-    }
-	if (server_port) {
-        src += ':' + server_port;
-    } 
-	 if (chan) {
-        src += '/' + chan;
+	if (port) {
+        src += ':' + port + '/';
     }
 	if (nick) {
-        src += '?&nick=' + nick;
+        src += '?' + '&' + 'nick' + '=' + nick;
     }
+	if (theme) {
+        src += '&' + 'theme=' + theme;
+    } 
+	 if (chan) {
+        src += '#' + chan;
+    }
+	
     return src;
 }
 function change_embed_dimensions() {
