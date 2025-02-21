@@ -1,0 +1,11 @@
+{
+  "name": "kiwichat-netlify",
+  "version": "1.0.0",
+  "description": "NetLiFy KiwiChat on IRC @RomaniaChat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
